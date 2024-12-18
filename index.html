@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUX MUNDIS CUP 2024</title>
+  <link rel="stylesheet" href="index.css">
+  <script>
+    function Login(event) {
+      event.preventDefault(); // Prevents the form from submitting
+      var username = document.getElementById('user').value;
+      var password = document.getElementById('pass').value;
+      // Check if the entered username and password are correct
+      if (username === 'regine' && password === '123456') {
+        // If correct, redirect to the homepage (websit.html)
+        alert("LOGIN SUCCESSFUL");
+        window.location.href = "home.html";
+      } else {
+        // If incorrect, show an alert
+        alert("Invalid username or password.");
+      }
+    }
+  </script>
+</head>
+ 
+<body>
+  <div class="wrapper">
+    <!-- Use onsubmit to call the Login function on form submission -->
+    <form onsubmit="Login(event)">
+      <h1>Login</h1>
+      <div class="input-box">
+        <input type="text" id="user" placeholder="Username" required>
+      </div>
+      <div class="input-box">
+        <input type="password" id="pass" placeholder="Password" required>
+      </div>
+      <div class="remember-me">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      <!-- The button now works with the onsubmit attribute -->
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+ 
+</html>
